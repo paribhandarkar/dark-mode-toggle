@@ -1,0 +1,61 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  align-items: center;
+  background-color: pink;
+  transition: 0.4s;
+}
+
+.label {
+  width: 80px;
+  height: 40px;
+  background-color: palevioletred;
+  position: absolute;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.input {
+  visibility: hidden;
+}
+
+.circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: pink;
+  top: 3px;
+  position: absolute;
+  left: 3px;
+  animation: toggleOff 0.4s linear forwards;
+}
+
+.input:checked + .label {
+  background-color: purple;
+}
+
+
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.input:checked + .label .circle{
+    animation: toggleOn 0.4s linear forwards;
+    background-color: plum;
+}
